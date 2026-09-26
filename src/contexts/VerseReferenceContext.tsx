@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
-import { BookAbbr, VerseReference } from '../types';
+import { VerseReference } from '../types';
 
 
 interface AppStateContextType {
@@ -18,9 +18,9 @@ interface AppStateContextProviderProps {
 
 export function AppStateContextProvider({
   children,
-  initialReference = { book: 'jo' as BookAbbr, chapter: 3, verse: 16 },
+  initialReference,
 }: AppStateContextProviderProps) {
-  const [reference, setReference] = useState<VerseReference | null>(initialReference);
+  const [reference, setReference] = useState<VerseReference | null>(initialReference ?? null);
   const [isCaptionOpen, setIsCaptionOpen] = useState<boolean>(false);
 
   return (

@@ -6,11 +6,16 @@ html, body {
 .caption-outer {
     width: 100vw;
     height: 100vh;
-    background-color: #ffffff;
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+    transition: background-color 300ms ease;
+}
+
+.caption-outer.is-visible {
+    background-color: #ffffff;
 }
 
 .caption-inner {
@@ -23,6 +28,12 @@ html, body {
     justify-content: space-evenly;
     align-items: center;
     padding: 12px;
+    opacity: 0;
+    transition: opacity 300ms ease;
+}
+
+.caption-outer.is-visible .caption-inner {
+    opacity: 1;
 }
 
 .verse-text {
@@ -38,12 +49,7 @@ html, body {
     margin-top: 8px;
 }
 
-.caption-empty {
-    width: 100vw;
-    height: 100vh;
-}
-
-html, body, #root, .caption-empty {
+html, body, #root {
   background-color: transparent !important;
   background: transparent !important;
 }

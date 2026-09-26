@@ -1,5 +1,5 @@
 [package]
-name = "obs-versiculos"
+name = "versiculos-livestream"
 version = "0.1.0"
 description = "A Tauri App"
 authors = ["you"]

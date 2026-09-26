@@ -173,7 +173,7 @@ export default function ControlWindow() {
           <button onClick={() => handleGoToAdjacentVerse('next')}><ChevronRight /></button>
         </div>
         <div className="verse-preview">
-          <span>{reference ? 'Próximo versículo:' : 'Versículo selecionado:'}</span>
+          <span>{reference ? 'Próximo versículo:' : (results.length ? 'Versículo selecionado:' : '')}</span>
           <p>{
             reference
               ? getVerseByReference(ACF as Bible, getAdjacentVerse(ACF as Bible, reference, 'next'))
